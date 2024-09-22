@@ -59,7 +59,7 @@ print(f"O reajuste do salario de {salario} ficou em {salarioNovo}, teve um aumen
 
 #3 - Programa que leia um número e exiba o dia correspondente da semana. (1-Domingo, 2- Segunda, etc.), se digitar outro valor deve aparecer valor inválido.
 
-semana = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"]
+semana = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"]
 
 resposta = int(input("Digite um número de 1 a 7: "))
 
@@ -103,5 +103,37 @@ match resposta:
 
 #        conceito for A, B ou C ou “REPROVADO” se o conceito for D ou E.
 
+nota1 = float(input("Digite a primeira nota: "))
+nota2 = float(input("Digite a segunda nota: "))
 
-    
+while (nota1 > 10) or (nota2 > 10):
+    print(f"Não é possível ter uma nota maior que 10")
+    nota1 = float(input("Digite a primeira nota: "))
+    nota2 = float(input("Digite a segunda nota: "))
+
+media = (nota1 + nota2) / 2
+conceito = ""
+mensagem = ""
+
+if media > 9.0:
+    conceito = "A"
+    mensagem = "Aprovado"
+
+elif (media > 7.5) and (media <= 9.0):
+    conceito = "B"
+    mensagem = "Aprovado"
+
+elif (media > 6.0) and (media <= 7.5):
+    conceito = "C"
+    mensagem = "Aprovado"
+
+elif (media > 4.0) and (media <= 6.0):
+    conceito = "D"
+    mensagem = "Reprovado"
+
+elif media <= 4.0:
+    conceito = "E"
+    mensagem = "Reprovado"
+
+
+print(f"A sua média é {media}, você obteve um conceito {conceito} de aproveitamento na matéria. Você está {mensagem}")    
